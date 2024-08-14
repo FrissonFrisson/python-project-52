@@ -1,0 +1,34 @@
+<style>
+  .custom-alert {
+      display: inline-block; /* Сообщения под размер текста */ 
+      margin-top: 20px; 
+      margin-left: 10px; 
+      margin-bottom: 0;
+  }
+</style>
+
+{% if messages %}
+  <div class="alert-container">
+      {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible custom-alert fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      {% endfor %}
+  </div>
+{% endif %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const alerts = document.querySelectorAll('.alert-dismissible');
+      alerts.forEach(function(alert) {
+          setTimeout(function() {
+              alert.classList.remove('show');
+              alert.classList.add('fade');
+              setTimeout(function() {
+                  alert.remove();
+              }, 150); // Время на завершение анимации исчезновения
+          }, 5000); // Время задержки перед закрытием (5000 миллисекунд = 5 секунд)
+      });
+  });
+</script>

@@ -1,0 +1,12 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "testuser",
+            "password": "pbkdf2_sha256$720000$hfzshRZ5HXIUOCWFuYbria$9e49IxR49MgVjyhkfxb1UIYJTkeWRimK9QJX8ZN7vdg=",
+            "first_name": "testuser@example.com",
+            "last_name": "testuser@example.com"
+        }
+    }
+]

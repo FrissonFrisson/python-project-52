@@ -20,7 +20,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-ALLOWED_HOSTS = ['python-project-52-bbsc.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['python-project-52-bbsc.onrender.com', 'localhost', '127.0.0.1', 'webserver']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -88,24 +88,19 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
+# DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
+    
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'OPTIONS': {
+            'min_length': 3,  # Здесь вы можете задать минимальную длину пароля
+        }
     },
 ]
 
