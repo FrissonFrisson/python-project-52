@@ -43,12 +43,6 @@
                 <button type="submit" class="nav-link btn btn-link">{% translate 'Logout' %}</button>
             </form>
         </li>
-        
-
-
-
-
-
         {% else %}        
         <li class="nav-item">
           <a class="nav-link" href="/login/">{% translate 'login' %}</a>
@@ -66,7 +60,6 @@
     {% include "flashmsg.html" %}
     {% block content %}
     {% endblock %}
-
     <footer>
         {% block footer %}
         <!-- Image and text -->

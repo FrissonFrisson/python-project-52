@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+  <div class="container wrapper flex-grow-1">
+    <h1 class="my-4 text-light">      
+        {% translate 'Tasks' %}
+              </h1>
+              <a class="btn btn-primary mb-3" href="/tasks/create/">Создать статус</a>
+<table class="table text-light table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>{% translate 'Name' %}</th>
+      <th>{% translate 'Date of creation' %}</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %}
+      <tr>
+        <td class="text-light">{{task.id}}</td>
+        <td class="text-light">{{task.name}}</td>
+        <td class="text-light">{{task.date_joined}}</td>
+        <td>
+          <a href="/tasks/{{task.id}}/update/">{% translate 'Create' %}</a>
+          <br>
+          <a href="/tasks/{{task.id}}/delete/">{% translate 'Delete' %}</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+</div>
+    {% endblock %}   
