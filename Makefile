@@ -4,7 +4,7 @@ run:
 	poetry run python3 manage.py runserver
 
 test:
-	$(MAKE) lint && poetry run python3 manage.py test
+	$(MAKE) lint; poetry run python3 manage.py test
 
 makemigrations:
 	poetry run python3 manage.py makemigrations

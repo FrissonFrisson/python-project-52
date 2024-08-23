@@ -3,5 +3,4 @@
 
 [![Frisson Lint](https://github.com/FrissonFrisson/python-project-52/actions/workflows/check_lint.yml/badge.svg)](https://github.com/FrissonFrisson/python-project-52/actions/workflows/check_lint.yml)
 
-
 [a link](https://python-project-52-bbsc.onrender.com)
