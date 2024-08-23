@@ -20,12 +20,20 @@ jobs:
         # make depends on poetry
       - name: Install dependencies
         run: |
-          pip install poetry
           pip install --upgrade pip
+          pip install poetry
           make install
       - name: Run linter and pytest
         run: |
           make lint
+      - name: Check for coverage
+        run: |
+          if command -v coverage > /dev/null; then
+            echo "Coverage is installed."
+          else
+            echo "Coverage is NOT installed. Installing..."
+            pip install coverage
+          fi
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         if: github.ref_name == 'main'
