@@ -115,7 +115,7 @@ msgstr "Только свои задачи"
 
 #: task_manager/tasks/views.py:50
 msgid "Tasks successfully created"
-msgstr "Задача успешно зарегестрирована"
+msgstr "Задача успешно создана"
 
 #: task_manager/tasks/views.py:62
 msgid "Task successfully changed"
