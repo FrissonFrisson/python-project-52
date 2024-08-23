@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-
+{% load django_bootstrap5 %}
 {% block content %}
 <div class="container wrapper flex-grow-1 text-light">
     <h1 class="my-4">
@@ -9,20 +9,7 @@
 
     <form method="post">
         {% csrf_token %}
-        {% for field in form %}
-        <label class="form-label" for="id_{{ field.name }}">{{ field.label }}</label>
-        <div class="mb-3">
-        <input type="text" class="form-control"
-        name="{{ field.name }}"
-        id="id_{{ field.name }}"
-        value="{{ field.value|default:'' }}" 
-        placeholder="{{ field.label }}"> 
-        <div class="text-danger">
-        <small>{{field.errors}}</small>
-        </div>
-        <div class="form-text">{{ field.help_text }} </div>
-        </div>
-        {% endfor %}
+        {% bootstrap_form form %}
         <input class="btn btn-primary" type="submit" value="{% translate 'Sign up' %}">
     </form>
 </div>

@@ -5,7 +5,7 @@
     <h1 class="my-4 text-light">      
         {% translate 'Labels' %}
               </h1>
-              <a class="btn btn-primary mb-3" href="/labels/create/">Создать статус</a>
+              <a class="btn btn-primary mb-3" href="/labels/create/">{% translate 'Create label' %}</a>
 <table class="table text-light table-striped">
   <thead>
     <tr>
@@ -22,7 +22,7 @@
         <td class="text-light">{{label.name}}</td>
         <td class="text-light">{{label.date_joined}}</td>
         <td>
-          <a href="/labels/{{label.id}}/update/">{% translate 'Create' %}</a>
+          <a href="/labels/{{label.id}}/update/">{% translate 'Change' %}</a>
           <br>
           <a href="/labels/{{label.id}}/delete/">{% translate 'Delete' %}</a>
         </td>

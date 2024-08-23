@@ -6,9 +6,11 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.models import User
 from .forms import *
+from django.shortcuts import redirect
 from ..mixins import UserUpdatePermissionMixin
 from django.contrib import messages
 from django.views.generic import ListView
+from django.db.models.deletion import ProtectedError
 
 
 
@@ -67,6 +69,13 @@ class UserDeleteView(UserUpdatePermissionMixin, DeleteView):
     template_name = 'users/delete_user.html'
     success_url = reverse_lazy("users")
 
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, _('User deleted successfully'))
-        return super().delete(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        try:
+            self.object.delete()
+            messages.success(self.request, _('User deleted successfully'))
+            return redirect(self.get_success_url())
+        except ProtectedError:
+            messages.error(self.request, _('Cannot delete user because it is in use'))
+            return redirect(self.get_success_url())

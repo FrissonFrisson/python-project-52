@@ -1,7 +1,6 @@
 {% load static %}
 {# Load the tag library #}
 {% load django_bootstrap5 %}
-{# Load CSS and JavaScript #}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 {% load i18n  %}
@@ -13,9 +12,8 @@
     <title>{% translate 'Task Manager by Frisson' %}</title>
   </head>
 
-  <header>
   {% block navbar %}
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ms-0 border-bottom">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2 border-bottom">
     <a class="navbar-brand ms-3" href="/">{% translate 'Task Manager' %}</a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent">
       <span class="navbar-toggler-icon"></span>
@@ -29,13 +27,13 @@
       <ul class="navbar-nav">
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="/statuses/">Статусы</a>
+          <a class="nav-link" href="/statuses/">{% translate 'Statuses' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/labels/">Метки</a>
+          <a class="nav-link" href="/labels/">{% translate 'Labels' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/tasks/">Задачи</a>
+          <a class="nav-link" href="/tasks/">{% translate 'Tasks' %}</a>
         </li>
         <li class="nav-item">
             <form method="POST" action="{% url 'logout' %}" style="display: inline;">
@@ -48,21 +46,21 @@
           <a class="nav-link" href="/login/">{% translate 'login' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/users/create/">{% translate 'Registation' %}</a>
+          <a class="nav-link" href="/users/create/">{% translate 'Registration' %}</a>
         </li>
         {% endif %}
       </ul>
     </div>
   </nav>
   {% endblock %}
-</header>
   <body class="d-flex flex-column min-vh-100 bg-dark">
-    {% include "flashmsg.html" %}
+    <div class="container wrapper flex-grow-1 text-light">
+    {% bootstrap_messages %}
     {% block content %}
     {% endblock %}
+  </div>
     <footer>
         {% block footer %}
-        <!-- Image and text -->
         <nav class="navbar navbar-dark bg-dark border-top">
             <a class="navbar-brand mx-auto" href="https://t.me/+79606549902" target="_blank">
             <img src="{% static 'icons/tg_logo.png' %}" width="30" height="30" class="d-inline-block align-top mx-auto" alt="">

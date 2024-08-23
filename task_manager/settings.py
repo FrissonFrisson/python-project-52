@@ -41,10 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_manager',
-    'task_manager.users',
-    'task_manager.statuses',
-    'task_manager.labels',
     'django_bootstrap5',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -110,7 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
-LOCALE_PATHS = [BASE_DIR / 'task_manager'/'locale']
+LOCALE_PATHS = [BASE_DIR /'locale']
+
 LANGUAGE_CODE = 'en-us'
 LANGUAGES = [
     ('en', 'English'),
@@ -120,7 +119,7 @@ LANGUAGES = [
 TIME_ZONE = 'UTC'
 
 USE_I18N = True 
-
+USE_L10N = True
 USE_TZ = True
 
 

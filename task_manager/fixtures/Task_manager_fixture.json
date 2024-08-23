@@ -1,0 +1,100 @@
+[
+    {
+        "model": "task_manager.taskstatus",
+        "pk": 1,
+        "fields": {
+            "name": "teststatus",
+            "date_joined": "2023-10-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "task_manager.taskstatus",
+        "pk": 2,
+        "fields": {
+            "name": "teststatus2",
+            "date_joined": "2023-10-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "testuser",
+            "password": "pbkdf2_sha256$720000$hfzshRZ5HXIUOCWFuYbria$9e49IxR49MgVjyhkfxb1UIYJTkeWRimK9QJX8ZN7vdg=",
+            "first_name": "testuser@example.com",
+            "last_name": "testuser@example.com"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "username": "testuser2",
+            "password": "pbkdf2_sha256$720000$hfzshRZ5HXIUOCWFuYbria$9e49IxR49MgVjyhkfxb1UIYJTkeWRimK9QJX8ZN7vdg=",
+            "first_name": "testuser@example.com",
+            "last_name": "testuser@example.com"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "username": "testuser3",
+            "password": "pbkdf2_sha256$720000$hfzshRZ5HXIUOCWFuYbria$9e49IxR49MgVjyhkfxb1UIYJTkeWRimK9QJX8ZN7vdg=",
+            "first_name": "testuser@example.com",
+            "last_name": "testuser@example.com"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "username": "testuser4",
+            "password": "pbkdf2_sha256$720000$hfzshRZ5HXIUOCWFuYbria$9e49IxR49MgVjyhkfxb1UIYJTkeWRimK9QJX8ZN7vdg=",
+            "first_name": "testuser@example.com",
+            "last_name": "testuser@example.com"
+        }
+    },
+    {
+        "model": "task_manager.Label",
+        "pk": 1,
+        "fields": {
+            "name": "testlabel",
+            "date_joined": "2023-10-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "task_manager.Label",
+        "pk": 2,
+        "fields": {
+            "name": "testlabel2",
+            "date_joined": "2023-10-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "task_manager.Task",
+        "pk": 1,
+        "fields": {
+            "name": "testtask2",
+            "author": 2,
+            "performer": 3,
+            "label": [2],
+            "descriptions": "testdescriptions",
+            "status": 2,
+            "date_joined": "2023-10-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "task_manager.Task",
+        "pk": 2,
+        "fields": {
+            "name": "testtask",
+            "author": 1,
+            "performer": 2,
+            "label": [2],
+            "descriptions": "testdescriptions",
+            "status": 2,
+            "date_joined": "2023-10-10T00:00:00Z"
+        }
+    }
+]
