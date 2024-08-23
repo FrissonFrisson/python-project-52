@@ -6,3 +6,5 @@ __pycache__/
 coverage.xml
 .coveragerc
 .pytest_cache/
+/htmlcov/
+.env
