@@ -11,6 +11,9 @@ files = [
     {file = "asgiref-3.8.1.tar.gz", hash = "sha256:c343bd80a0bec947a9860adb4c432ffa7db769836c64238fc34bdc3fec84d590"},
 ]
 
+[package.dependencies]
+typing-extensions = {version = ">=4", markers = "python_version < \"3.11\""}
+
 [package.extras]
 tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
@@ -503,5 +506,5 @@ brotli = ["brotli"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = ">=3.11,<4.0"
-content-hash = "564e979251287011214d2607234327ca8a5868a5b4d2421a245662046a1cfcc1"
+python-versions = ">=3.10,<4.0"
+content-hash = "25b98e885939d83a04a786ee9aacb5dacf4ac1b73859669ded5f6e01c0d2f4d9"
