@@ -21,4 +21,4 @@ lint:
 test-coverage:
 	coverage run  --source='.' manage.py test task_manager
 	coverage report
-	coverage html
+	coverage lcov
