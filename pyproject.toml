@@ -2,6 +2,7 @@
 name = "hexlet-code"
 version = "0.1.0"
 description = ""
+packages = [{include = "task_manager"}]
 authors = ["FrissonFrisson <compton56rus@gmail.com>"]
 readme = "README.md"
 
