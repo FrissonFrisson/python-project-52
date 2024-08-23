@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url 
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -29,8 +28,6 @@ ALLOWED_HOSTS = ['python-project-52-bbsc.onrender.com', 'localhost', '127.0.0.1'
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
-
 
 # Application definition
 
@@ -50,7 +47,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware', 
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -105,7 +102,6 @@ DATABASES = {
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
         'OPTIONS': {
@@ -117,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
-LOCALE_PATHS = [BASE_DIR /'locale']
+LOCALE_PATHS = [BASE_DIR / 'locale']
 
 LANGUAGE_CODE = 'en-us'
 LANGUAGES = [
@@ -127,7 +123,7 @@ LANGUAGES = [
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True 
+USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 

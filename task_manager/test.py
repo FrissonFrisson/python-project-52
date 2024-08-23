@@ -3,17 +3,17 @@ from django.urls import reverse
 from django.contrib.messages import get_messages
 from django.contrib.auth.models import User
 from task_manager.models import TaskStatus, Label, Task
-from django.contrib.auth.hashers import make_password
 
 
 class Login():
+
     def login_testuser1(self):
         self.client.login(username='testuser', password='your_password')
 
 
 class TaskCRUDTest(Login, TestCase):
 
-    fixtures = ['Task_manager_fixture.json'] 
+    fixtures = ['Task_manager_fixture.json']
 
     def test_create_task(self):
         self.login_testuser1()
@@ -28,7 +28,7 @@ class TaskCRUDTest(Login, TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertTrue(messages)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, expected_url=reverse('tasks_list')) 
+        self.assertRedirects(response, expected_url=reverse('tasks_list'))
         self.assertTrue(Task.objects.filter(name='New Task').exists())
 
     def test_delete_task(self):
@@ -45,7 +45,6 @@ class TaskCRUDTest(Login, TestCase):
         self.assertRedirects(response, expected_url=reverse('tasks_list'))
         self.assertFalse(Task.objects.filter(id=2).exists())
         self.assertTrue(messages)
-
 
     def test_update_task(self):
         updated_data = {
@@ -68,7 +67,7 @@ class TaskCRUDTest(Login, TestCase):
 
 class LabelCRUDTest(Login, TestCase):
 
-    fixtures = ['Task_manager_fixture.json'] 
+    fixtures = ['Task_manager_fixture.json']
 
     def test_create_label(self):
         response = self.client.post(reverse('create_label'), {
@@ -76,7 +75,7 @@ class LabelCRUDTest(Login, TestCase):
         })
         messages = list(get_messages(response.wsgi_request))
         self.assertTrue(messages)
-        self.assertRedirects(response, expected_url=reverse('login')) 
+        self.assertRedirects(response, expected_url=reverse('login'))
         self.login_testuser1()
         response = self.client.post(reverse('create_label'), {
             "name": "label",
@@ -84,7 +83,7 @@ class LabelCRUDTest(Login, TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertTrue(messages)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, expected_url=reverse('labels_list')) 
+        self.assertRedirects(response, expected_url=reverse('labels_list'))
         self.assertTrue(Label.objects.filter(name='label').exists())
 
     def test_delete_label(self):
@@ -112,7 +111,7 @@ class LabelCRUDTest(Login, TestCase):
 
 class StatusCRUDTest(Login, TestCase):
 
-    fixtures = ['Task_manager_fixture.json'] 
+    fixtures = ['Task_manager_fixture.json']
 
     def test_create_status(self):
         response = self.client.post(reverse('create_status'), {
@@ -120,7 +119,7 @@ class StatusCRUDTest(Login, TestCase):
         })
         messages = list(get_messages(response.wsgi_request))
         self.assertTrue(messages)
-        self.assertRedirects(response, expected_url=reverse('login')) 
+        self.assertRedirects(response, expected_url=reverse('login'))
         self.login_testuser1()
         response = self.client.post(reverse('create_status'), {
             "name": "status",
@@ -128,7 +127,7 @@ class StatusCRUDTest(Login, TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertTrue(messages)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, expected_url=reverse('statuses_list')) 
+        self.assertRedirects(response, expected_url=reverse('statuses_list'))
         self.assertTrue(TaskStatus.objects.filter(name='status').exists())
 
     def test_delete_status(self):
@@ -152,11 +151,11 @@ class StatusCRUDTest(Login, TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertTrue(messages)
         self.assertEqual(Task.name, 'newname')
-    
+
 
 class UserCRUDTest(Login, TestCase):
 
-    fixtures = ['Task_manager_fixture.json'] 
+    fixtures = ['Task_manager_fixture.json']
 
     def test_registration_user(self):
         response = self.client.post(reverse('registration'), {
@@ -169,7 +168,7 @@ class UserCRUDTest(Login, TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertTrue(messages)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, expected_url=reverse('login')) 
+        self.assertRedirects(response, expected_url=reverse('login'))
         self.assertTrue(User.objects.filter(username='testuser222').exists())
 
     def test_update_user(self):
@@ -191,7 +190,6 @@ class UserCRUDTest(Login, TestCase):
         self.assertEqual(user.first_name, 'test_first_name')
         self.assertEqual(user.last_name, 'test_last_name')
         self.assertTrue(user.check_password('111'))
-
 
     def test_delete_user(self):
         self.login_testuser1()

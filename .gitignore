@@ -8,3 +8,4 @@ coverage.xml
 .pytest_cache/
 /htmlcov/
 .env
+.db.sqlite3 

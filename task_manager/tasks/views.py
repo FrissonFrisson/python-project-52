@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.utils.translation import gettext_lazy as _
 from task_manager.models import Task, TaskStatus, Label
-from .forms import *
+from task_manager.tasks.forms import TaskForm
 from ..mixins import CustomLoginRequiredMixin
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
@@ -23,7 +23,7 @@ class TasksListView(CustomLoginRequiredMixin, ListView):
     model = Task
     template_name = 'tasks/tasks_list.html'
     ordering = ['date_joined']
-    
+
     def get_queryset(self):
         tasks = Task.objects.all()
         tasks_filtered = TaskFilter(
@@ -38,7 +38,7 @@ class TasksListView(CustomLoginRequiredMixin, ListView):
         context['labels'] = Label.objects.all()
         context['filter'] = self.get_queryset()
         return context
-   
+
 
 class TaskCreateView(CustomLoginRequiredMixin, CreateView):
     template_name = 'tasks/create_task.html'
@@ -49,7 +49,7 @@ class TaskCreateView(CustomLoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         messages.success(self.request, _('Tasks successfully created'))
         return super().form_valid(form)
-    
+
 
 class TaskUpdateView(CustomLoginRequiredMixin, UpdateView):
     model = Task
@@ -57,16 +57,15 @@ class TaskUpdateView(CustomLoginRequiredMixin, UpdateView):
     template_name = 'tasks/update_task.html'
     success_url = reverse_lazy('tasks_list')
 
-
     def post(self, request: HttpRequest, *args: str, **kwargs: reverse_lazy) -> HttpResponse:
         messages.success(self.request, _('Task successfully changed'))
         return super().post(request, *args, **kwargs)
+
 
 class TaskDeleteView(CustomLoginRequiredMixin, DeleteView):
     model = Task
     template_name = 'tasks/delete_task.html'
     success_url = reverse_lazy("tasks_list")
- 
 
     def post(self, request: HttpRequest, *args: str, **kwargs: reverse_lazy) -> HttpResponse:
         self.object = self.get_object()
