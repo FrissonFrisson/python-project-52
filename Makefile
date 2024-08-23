@@ -19,6 +19,6 @@ lint:
 	poetry run flake8 task_manager
 
 test-coverage:
-	coverage run  --source='.' manage.py test task_manager
+	coverage run  --source='.' ./manage.py test task_manager
 	coverage report
 	coverage html
