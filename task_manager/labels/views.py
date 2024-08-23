@@ -49,8 +49,8 @@ class LabelDeleteView(CustomLoginRequiredMixin, DeleteView):
         self.object = self.get_object()
         try:
             self.object.delete()
-            messages.success(self.request, _('Task deleted successfully'))
+            messages.success(self.request, _('Label deleted successfully'))
             return redirect(self.get_success_url())
         except ProtectedError:
-            messages.error(self.request, _('Cannot delete task because it is in use'))
+            messages.error(self.request, _('Cannot delete label because it is in use'))
             return redirect(self.get_success_url())

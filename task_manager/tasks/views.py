@@ -13,7 +13,7 @@ from .filters import TaskFilter
 from django.contrib.auth.models import User
 
 
-class TaskDetail(DetailView):
+class TaskDetail(CustomLoginRequiredMixin, DetailView):
     model = Task
     template_name = 'tasks/task_detail.html'
     context_object_name = 'task'
@@ -73,5 +73,5 @@ class TaskDeleteView(CustomLoginRequiredMixin, DeleteView):
         if self.object.author != request.user:
             messages.error(self.request, _('Only its author can delete a task'))
             return redirect(self.get_success_url())
-        messages.success(request, 'Task deleted successfully')
+        messages.success(request, _('Task deleted successfully'))
         return super().post(request, *args, **kwargs)

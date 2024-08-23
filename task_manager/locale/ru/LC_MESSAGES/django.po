@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-23 19:52+0500\n"
+"POT-Creation-Date: 2024-08-23 21:00+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,34 +20,28 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: task_manager/labels/views.py:28
-#, fuzzy
-#| msgid "The user has been successfully registered"
 msgid "Labels successfully created"
-msgstr "Пользователь успешно зарегестрирован"
+msgstr "Метка успешно создана"
 
 #: task_manager/labels/views.py:40
 msgid "Label successfully changed"
 msgstr "Метка успешно изменена"
 
 #: task_manager/labels/views.py:52
-#, fuzzy
-#| msgid "The user has been successfully registered"
-msgid "Task deleted successfully"
-msgstr "Пользователь успешно зарегестрирован"
+msgid "Label deleted successfully"
+msgstr "Метка успешно удалена"
 
 #: task_manager/labels/views.py:55
-msgid "Cannot delete task because it is in use"
-msgstr "Невозможно удалить статус, потому что он используется"
+msgid "Cannot delete label because it is in use"
+msgstr "Невозможно удалить метку, потому что она используется"
 
 #: task_manager/mixins.py:15
 msgid "You do not have the rights to change another user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
 #: task_manager/mixins.py:17 task_manager/mixins.py:23
-#, fuzzy
-#| msgid "You are logged in"
 msgid "You are not logged in! Please log in."
-msgstr "Вы залогинены"
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
 #: task_manager/models.py:7 task_manager/models.py:15 task_manager/models.py:29
 #: task_manager/templates/labels/labels_list.html:13
@@ -70,10 +64,8 @@ msgid "Label"
 msgstr "Метка"
 
 #: task_manager/models.py:31
-#, fuzzy
-#| msgid "Registration"
 msgid "Description"
-msgstr "Регистрация"
+msgstr "Описание"
 
 #: task_manager/models.py:32 task_manager/tasks/filters.py:13
 #: task_manager/templates/tasks/task_detail.html:23
@@ -81,7 +73,8 @@ msgstr "Регистрация"
 msgid "Status"
 msgstr "Статус"
 
-#: task_manager/models.py:33 task_manager/templates/labels/labels_list.html:6
+#: task_manager/models.py:33 task_manager/templates/base.html:33
+#: task_manager/templates/labels/labels_list.html:6
 #: task_manager/templates/tasks/task_detail.html:32
 msgid "Labels"
 msgstr "Метки"
@@ -97,18 +90,16 @@ msgid "Performer"
 msgstr "Исполнитель"
 
 #: task_manager/statuses/views.py:30
-#, fuzzy
-#| msgid "The user has been successfully registered"
 msgid "Status successfully created"
-msgstr "Пользователь успешно зарегестрирован"
+msgstr "Статус успешно создан"
 
 #: task_manager/statuses/views.py:42
 msgid "Status successfully changed"
-msgstr ""
+msgstr "Статус успешно изменен"
 
 #: task_manager/statuses/views.py:55
 msgid "Status deleted successfully"
-msgstr ""
+msgstr "Статус успешно удален"
 
 #: task_manager/statuses/views.py:58
 msgid "Cannot delete status because it is in use"
@@ -123,20 +114,20 @@ msgid "Only my tasks"
 msgstr "Только свои задачи"
 
 #: task_manager/tasks/views.py:50
-#, fuzzy
-#| msgid "The user has been successfully registered"
 msgid "Tasks successfully created"
-msgstr "Пользователь успешно зарегестрирован"
+msgstr "Задача успешно зарегестрирована"
 
 #: task_manager/tasks/views.py:62
-#, fuzzy
-#| msgid "The user has been successfully registered"
 msgid "Task successfully changed"
 msgstr "Задача успешно изменена"
 
 #: task_manager/tasks/views.py:74
 msgid "Only its author can delete a task"
 msgstr "Задачу может удалить только ее автор"
+
+#: task_manager/tasks/views.py:76
+msgid "Task deleted successfully"
+msgstr "Задача успешно удалена"
 
 #: task_manager/templates/base.html:12
 msgid "Task Manager by Frisson"
@@ -151,6 +142,16 @@ msgstr "Менеджер задач"
 msgid "Users"
 msgstr "Пользователи"
 
+#: task_manager/templates/base.html:30
+#: task_manager/templates/statuses/statuses_list.html:6
+msgid "Statuses"
+msgstr "Статусы"
+
+#: task_manager/templates/base.html:36
+#: task_manager/templates/tasks/tasks_list.html:6
+msgid "Tasks"
+msgstr "Задачи"
+
 #: task_manager/templates/base.html:41
 msgid "Logout"
 msgstr "Выход"
@@ -159,6 +160,10 @@ msgstr "Выход"
 msgid "login"
 msgstr "Вход"
 
+#: task_manager/templates/base.html:49
+#: task_manager/templates/users/signup.html:7
+msgid "Registration"
+msgstr "Регистрация"
 
 #: task_manager/templates/index.html:9
 msgid "Greetings from Hexlet!"
@@ -173,8 +178,6 @@ msgid "Learn more"
 msgstr "Узнать больше"
 
 #: task_manager/templates/labels/create_labels.html:6
-#, fuzzy
-#| msgid "Create"
 msgid "Create labels"
 msgstr "Создать метку"
 
@@ -204,8 +207,6 @@ msgid "Yes, delete"
 msgstr "Да, удалить"
 
 #: task_manager/templates/labels/labels_list.html:8
-#, fuzzy
-#| msgid "Create"
 msgid "Create label"
 msgstr "Создать метку"
 
@@ -219,6 +220,7 @@ msgstr "Дата создания"
 
 #: task_manager/templates/labels/labels_list.html:25
 #: task_manager/templates/statuses/statuses_list.html:25
+#: task_manager/templates/tasks/task_detail.html:42
 #: task_manager/templates/tasks/tasks_list.html:40
 #: task_manager/templates/users/users_list.html:26
 msgid "Change"
@@ -233,10 +235,8 @@ msgid "Delete"
 msgstr "Удалить"
 
 #: task_manager/templates/labels/update_label.html:7
-#, fuzzy
-#| msgid "Editing a user"
 msgid "Editing a Label"
-msgstr "Изменение пользователя"
+msgstr "Изменение метки"
 
 #: task_manager/templates/labels/update_label.html:25
 #: task_manager/templates/statuses/update_status.html:25
@@ -247,8 +247,6 @@ msgstr "Изменить"
 
 #: task_manager/templates/statuses/create_status.html:6
 #: task_manager/templates/statuses/statuses_list.html:8
-#, fuzzy
-#| msgid "Create"
 msgid "Create status"
 msgstr "Создать статус"
 
@@ -256,50 +254,31 @@ msgstr "Создать статус"
 msgid "Deleting a status"
 msgstr "Удаление статус"
 
-#: task_manager/templates/statuses/statuses_list.html:6
-msgid "Statuses"
-msgstr "Статусы"
-
 #: task_manager/templates/statuses/update_status.html:7
-#, fuzzy
-#| msgid "Editing a user"
 msgid "Editing a status"
-msgstr "Изменение пользователя"
+msgstr "Изменение статуса"
 
 #: task_manager/templates/tasks/create_task.html:6
-#, fuzzy
-#| msgid "Create"
 msgid "Create Task"
-msgstr "Создать метку"
+msgstr "Создать задачу"
 
 #: task_manager/templates/tasks/task_detail.html:5
 msgid "View a task"
 msgstr "Просмотр задачи"
 
-
-#: task_manager/templates/tasks/tasks_list.html:6
-msgid "Tasks"
-msgstr "Задачи"
-
 #: task_manager/templates/tasks/tasks_list.html:8
-#, fuzzy
-#| msgid "Create"
 msgid "Create task"
-msgstr "Создать статус"
+msgstr "Создать задачу"
 
 #: task_manager/templates/tasks/tasks_list.html:14
 msgid "Show"
 msgstr "Показать"
 
 #: task_manager/templates/tasks/update_task.html:7
-#, fuzzy
-#| msgid "Editing a user"
 msgid "Editing a Task"
-msgstr "Изменение пользователя"
+msgstr "Изменение задачи"
 
 #: task_manager/templates/users/delete_user.html:5
-#, fuzzy
-#| msgid "Editing a user"
 msgid "Deleting a user"
 msgstr "Удаление пользователя"
 
@@ -307,11 +286,6 @@ msgstr "Удаление пользователя"
 #: task_manager/templates/users/login.html:12
 msgid "Login"
 msgstr "Вход"
-
-#: task_manager/templates/base.html:49
-#: task_manager/templates/users/signup.html:7
-msgid "Registration"
-msgstr "Регистрация"
 
 #: task_manager/templates/users/signup.html:13
 msgid "Sign up"
@@ -342,10 +316,8 @@ msgid "You are logged out"
 msgstr "Вы разлогинены"
 
 #: task_manager/users/views.py:64
-#, fuzzy
-#| msgid "The user has been successfully registered"
 msgid "User successfully changed"
-msgstr "Пользователь успешно зарегестрирован"
+msgstr "Пользователь успешно изменен"
 
 #: task_manager/users/views.py:77
 msgid "User deleted successfully"
@@ -355,15 +327,11 @@ msgstr "Пользователь успешно удален"
 msgid "Cannot delete user because it is in use"
 msgstr "Невозможно удалить пользователя, потому что он используется"
 
-#, fuzzy
-#~| msgid "The user has been successfully registered"
 #~ msgid "Label successfully deleted"
-#~ msgstr "Пользователь успешно зарегестрирован"
+#~ msgstr "Метка успешно удалена"
 
-#, fuzzy
-#~| msgid "Task Manager"
 #~ msgid "Task Name"
-#~ msgstr "Менеджер задач"
+#~ msgstr "Имя задачи"
 
 #~ msgid "First name"
 #~ msgstr "Имя"
