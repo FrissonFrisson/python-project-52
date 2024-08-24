@@ -282,8 +282,11 @@ msgstr "Изменение задачи"
 msgid "Deleting a user"
 msgstr "Удаление пользователя"
 
-#: task_manager/templates/users/login.html:6
 msgctxt "nav-link"
+msgid "Login"
+msgstr "Вход"
+
+msgctxt "h1"
 msgid "Login"
 msgstr "Вход"
 
