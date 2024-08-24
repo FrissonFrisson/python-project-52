@@ -1,5 +1,3 @@
-from django.http.request import HttpRequest as HttpRequest
-from django.http.response import HttpResponse as HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.utils.translation import gettext_lazy as _
