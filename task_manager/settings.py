@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 from dotenv import load_dotenv
 load_dotenv()
 POST_SERVER_ITEM_ACCESS_TOKEN = os.getenv('POST_SERVER_ITEM_ACCESS_TOKEN')
@@ -57,6 +58,7 @@ MIDDLEWARE = [
 
 ]
 
+
 ROLLBAR = {
     'access_token': POST_SERVER_ITEM_ACCESS_TOKEN,
     'environment': 'development' if DEBUG else 'production',
@@ -95,7 +97,7 @@ DATABASES = {
     }
 }
 
-# DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
+DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
 
 
 # Password validation
