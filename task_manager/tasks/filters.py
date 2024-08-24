@@ -13,7 +13,7 @@ class TaskFilter(django_filters.FilterSet):
         label=_('Status'),
         queryset=TaskStatus.objects.all(),
     )
-    performer = django_filters.ModelChoiceFilter(
+    executor = django_filters.ModelChoiceFilter(
         label=_('Perfomer'),
         queryset=User.objects.all()
     )
@@ -29,7 +29,7 @@ class TaskFilter(django_filters.FilterSet):
 
     class Meta:
         model = Task
-        fields = ['status', 'performer']
+        fields = ['status', 'executor']
 
     def filter_author(self, queryset, name, value):
         if value:

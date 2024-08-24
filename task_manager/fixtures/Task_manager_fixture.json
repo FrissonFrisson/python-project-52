@@ -77,9 +77,9 @@
         "fields": {
             "name": "testtask2",
             "author": 2,
-            "performer": 3,
+            "executor": 3,
             "label": [2],
-            "descriptions": "testdescriptions",
+            "description": "testdescription",
             "status": 2,
             "date_joined": "2023-10-10T00:00:00Z"
         }
@@ -90,9 +90,9 @@
         "fields": {
             "name": "testtask",
             "author": 1,
-            "performer": 2,
+            "executor": 2,
             "label": [2],
-            "descriptions": "testdescriptions",
+            "description": "testdescription",
             "status": 2,
             "date_joined": "2023-10-10T00:00:00Z"
         }

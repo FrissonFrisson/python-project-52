@@ -20,9 +20,9 @@ class TaskCRUDTest(Login, TestCase):
         response = self.client.post(reverse('create_task'), {
             "name": "New Task",
             "author": 2,
-            "performer": 3,
+            "executor": 3,
             "label": [2],
-            "descriptions": "Task description",
+            "description": "Task description",
             "status": 2,
         })
         messages = list(get_messages(response.wsgi_request))
@@ -50,9 +50,9 @@ class TaskCRUDTest(Login, TestCase):
         updated_data = {
             "name": "Updated Task",
             "author": 2,
-            "performer": 3,
+            "executor": 3,
             "label": [2],
-            "descriptions": "Updated description",
+            "description": "Updated description",
             "status": 2,
         }
         self.login_testuser1()

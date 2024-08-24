@@ -28,11 +28,11 @@ class LabelInfo(models.Model):
 class Task(models.Model):
     name = models.CharField(max_length=200, unique=True, verbose_name=_("Name"))
     date_joined = models.DateTimeField(auto_now_add=True, verbose_name=_("Date Joined"))
-    descriptions = models.TextField(verbose_name=_("Description"))
+    description = models.TextField(verbose_name=_("Description"))
     status = models.ForeignKey(TaskStatus, on_delete=models.PROTECT, verbose_name=_("Status"))
     label = models.ManyToManyField(Label, through="LabelInfo", verbose_name=_("Labels"))
     author = models.ForeignKey(User, on_delete=models.PROTECT, related_name='tasks_created', verbose_name=_("Author"))
-    performer = models.ForeignKey(User, on_delete=models.PROTECT, related_name='tasks_performed', verbose_name=_("Performer"))
+    executor = models.ForeignKey(User, on_delete=models.PROTECT, related_name='tasks_performed', verbose_name=_("Performer"))
 
     def __str__(self):
         return self.name
