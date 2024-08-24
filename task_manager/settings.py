@@ -55,7 +55,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
-
 ]
 
 
@@ -119,6 +118,7 @@ LOCALE_PATHS = [BASE_DIR / 'locale']
 
 LANGUAGE_CODE = 'ru-ru'
 LANGUAGES = [
+    ('en-us', 'English'),
     ('ru-ru', 'Russian'),
 ]
 
