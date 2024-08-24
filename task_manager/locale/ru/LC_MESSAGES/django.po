@@ -289,7 +289,7 @@ msgstr "Войти"
 
 #: task_manager/templates/users/signup.html:13
 msgid "Sign up"
-msgstr "Зарегестрировать"
+msgstr "Зарегистрировать"
 
 #: task_manager/templates/users/update.html:7
 msgid "Editing a user"
