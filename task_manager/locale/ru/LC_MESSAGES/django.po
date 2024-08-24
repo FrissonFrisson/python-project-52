@@ -305,7 +305,7 @@ msgstr "Полное имя"
 
 #: task_manager/users/views.py:29
 msgid "The user has been successfully registered"
-msgstr "Пользователь успешно зарегестрирован"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:40
 msgid "You are logged in"
