@@ -290,7 +290,7 @@ msgctxt "h1"
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/templates/users/login.html:12
+msgctxt "button"
 msgid "Login"
 msgstr "Войти"
 
