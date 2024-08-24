@@ -46,7 +46,7 @@ class TaskCreateView(CustomLoginRequiredMixin, CreateView):
     success_url = reverse_lazy('tasks_list')
 
     def form_valid(self, form):
-        form.instance.author = self.request.user.get_full_name()
+        form.instance.author = self.request.user
         messages.success(self.request, _('Tasks successfully created'))
         return super().form_valid(form)
 
