@@ -25,8 +25,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/users/">{% trans 'Users' %}</a>
         </li>
-      </ul>
-      <ul class="navbar-nav">
         {% if user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" href="/statuses/">{% trans 'Statuses' %}</a>
@@ -37,12 +35,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/tasks/">{% trans 'Tasks' %}</a>
         </li>
-        <li class="nav-item">
-            <form method="POST" action="{% url 'logout' %}" style="display: inline;">
-                {% csrf_token %}
-                <input type="submit" class="nav-link btn btn-link" value="{% trans 'Logout' %}">
-            </form>
-        </li>
         {% else %}        
         <li class="nav-item">
           <a class="nav-link" href="/login/">{% trans 'Login' %}</a>
@@ -51,6 +43,12 @@
           <a class="nav-link" href="/users/create/">{% trans 'Registration' %}</a>
         </li>
         {% endif %}
+      </ul>
+      <ul class="navbar-nav">
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <input class="btn nav-link" type="submit" value="{% trans 'Logout' %}">
+            </form>
       </ul>
     </div>
   </nav>
