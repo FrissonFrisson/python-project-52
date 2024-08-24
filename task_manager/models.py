@@ -30,7 +30,7 @@ class Task(models.Model):
     date_joined = models.DateTimeField(auto_now_add=True, verbose_name=_("Date Joined"))
     description = models.TextField(verbose_name=_("Description"))
     status = models.ForeignKey(TaskStatus, on_delete=models.PROTECT, verbose_name=_("Status"))
-    label = models.ManyToManyField(Label, through="LabelInfo", verbose_name=_("Labels"))
+    label = models.ManyToManyField(Label, through="LabelInfo", verbose_name=_("Labels"), blank=True)
     author = models.ForeignKey(User, on_delete=models.PROTECT, related_name='tasks_created', verbose_name=_("Author"))
     executor = models.ForeignKey(User, on_delete=models.PROTECT, related_name='tasks_executor', verbose_name=_("Executor"))
 
