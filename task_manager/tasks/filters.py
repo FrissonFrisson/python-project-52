@@ -17,7 +17,7 @@ class TaskFilter(django_filters.FilterSet):
         label=_('Executor'),
         queryset=CustomUser.objects.all()
     )
-    label = django_filters.ModelChoiceFilter(
+    labels = django_filters.ModelChoiceFilter(
         label=_('Label'),
         queryset=Label.objects.all()
     )
