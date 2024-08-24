@@ -32,7 +32,7 @@ class Task(models.Model):
     status = models.ForeignKey(TaskStatus, on_delete=models.PROTECT, verbose_name=_("Status"))
     label = models.ManyToManyField(Label, through="LabelInfo", verbose_name=_("Labels"))
     author = models.ForeignKey(User, on_delete=models.PROTECT, related_name='tasks_created', verbose_name=_("Author"))
-    executor = models.ForeignKey(User, on_delete=models.PROTECT, related_name='tasks_performed', verbose_name=_("Performer"))
+    executor = models.ForeignKey(User, on_delete=models.PROTECT, related_name='tasks_executor', verbose_name=_("Executor"))
 
     def __str__(self):
         return self.name
