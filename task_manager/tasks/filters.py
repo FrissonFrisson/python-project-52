@@ -4,8 +4,8 @@ from django import forms
 
 from task_manager.models import Task
 from task_manager.models import TaskStatus
-from task_manager.models import Label
-from django.contrib.auth.models import User
+from task_manager.models import Label, CustomUser
+
 
 
 class TaskFilter(django_filters.FilterSet):
@@ -15,7 +15,7 @@ class TaskFilter(django_filters.FilterSet):
     )
     executor = django_filters.ModelChoiceFilter(
         label=_('Executor'),
-        queryset=User.objects.all()
+        queryset=CustomUser.objects.all()
     )
     label = django_filters.ModelChoiceFilter(
         label=_('Label'),
