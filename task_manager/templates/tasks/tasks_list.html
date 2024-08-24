@@ -33,7 +33,7 @@
         <td class="text-light">{{task.id}}</td>
         <td class="text-light"><a href="/tasks/{{task.id}}">{{task.name}}</a></td>
         <td class="text-light">{{task.status}}</td>
-        <td class="text-light">{{task.author}}</td>
+        <td class="text-light">{{task.author.get_fullname()}}</td>
         <td class="text-light">{{task.executor}}</td>
         <td class="text-light">{{task.date_joined}}</td>
         <td>
