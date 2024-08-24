@@ -1,3 +1,5 @@
+from django.http.request import HttpRequest as HttpRequest
+from django.http.response import HttpResponse as HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.utils.translation import gettext_lazy as _
@@ -48,9 +50,9 @@ class CustomLogoutUser(LogoutView):
 
     next_page = reverse_lazy('index')
 
-    def get_next_page(self) -> str | None:
+    def dispatch(self, request):
         messages.info(self.request, _('You are logged out'))
-        return super().get_next_page()
+        return super().dispatch(request)
 
 
 class UserUpdateView(UserUpdatePermissionMixin, UpdateView):
