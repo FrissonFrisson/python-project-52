@@ -119,7 +119,6 @@ LOCALE_PATHS = [BASE_DIR / 'locale']
 
 LANGUAGE_CODE = 'ru-ru'
 LANGUAGES = [
-    ('en-us', 'English'),
     ('ru-ru', 'Russian'),
 ]
 
