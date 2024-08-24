@@ -2,11 +2,11 @@
 {% load i18n %}
   {% block content %}
   <div class="container wrapper flex-grow-1 text-light">
-    <h1 class="my-4">{% translate 'Deleting a user' %}</h1>   
-<p>{% translate 'Are you sure you want to delete' %} {{ object.first_name}} {{ object.last_name }} ?</p>
+    <h1 class="my-4">{% trans 'Deleting a user' %}</h1>   
+<p>{% trans 'Are you sure you want to delete' %} {{ object.first_name}} {{ object.last_name }} ?</p>
 <form method="post">
 {% csrf_token %}
-<input class="btn btn-danger" type="submit" value="{% translate 'Yes, delete' %}"">
+<input class="btn btn-danger" type="submit" value="{% trans 'Yes, delete' %}"">
 </form>
   </div>
   {% endblock %}

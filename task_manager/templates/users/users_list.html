@@ -3,15 +3,15 @@
 {% block content %}
   <div class="container wrapper flex-grow-1">
     <h1 class="my-4 text-light">      
-        {% translate 'Users' %}
+        {% trans 'Users' %}
               </h1>
 <table class="table text-light table-striped">
   <thead>
     <tr>
       <th>ID</th>
-      <th>{% translate 'User name' %}</th>
-      <th>{% translate 'Full name' %}</th>
-      <th>{% translate 'Date of creation' %}</th>
+      <th>{% trans 'User name' %}</th>
+      <th>{% trans 'Full name' %}</th>
+      <th>{% trans 'Date of creation' %}</th>
       <th></th>
     </tr>
   </thead>
@@ -23,9 +23,9 @@
         <td class="text-light">{{user.first_name}} {{user.last_name}}</td>
         <td class="text-light">{{user.date_joined}}</td>
         <td>
-          <a href="/users/{{user.id}}/update/">{% translate 'Change' %}</a>
+          <a href="/users/{{user.id}}/update/">{% trans 'Change' %}</a>
           <br>
-          <a href="/users/{{user.id}}/delete/">{% translate 'Delete' %}</a>
+          <a href="/users/{{user.id}}/delete/">{% trans 'Delete' %}</a>
         </td>
       </tr>
     {% endfor %}
