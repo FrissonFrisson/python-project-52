@@ -287,8 +287,8 @@ msgctxt "h1"
 msgid "Login"
 msgstr "Вход"
 
-msgctxt "button"
-msgid "Login"
+#: task_manager/templates/users/login.html:12
+msgid "Sign in"
 msgstr "Войти"
 
 #: task_manager/templates/users/signup.html:13
