@@ -7,7 +7,6 @@ from task_manager.models import TaskStatus
 from task_manager.models import Label, CustomUser
 
 
-
 class TaskFilter(django_filters.FilterSet):
     status = django_filters.ModelChoiceFilter(
         label=_('Status'),
