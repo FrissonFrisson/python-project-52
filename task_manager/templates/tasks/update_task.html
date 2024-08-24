@@ -2,7 +2,6 @@
 {% load i18n %}
 {% load django_bootstrap5 %}
 {% block content %}
-<div class="container wrapper flex-grow-1 text-light">
     <h1 class="my-4">
         {% trans 'Editing a Task' %}
     </h1>
@@ -11,5 +10,4 @@
         {% bootstrap_form form %}
         <input class="btn btn-primary" type="submit" value="{% trans 'Edit' %}">
     </form>
-</div>
 {% endblock %}
