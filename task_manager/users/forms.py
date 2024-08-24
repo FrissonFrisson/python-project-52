@@ -13,6 +13,7 @@ class SignUpForms(UserCreationForm):
         if 'usable_password' in self.fields:
             del self.fields['usable_password']
 
+
 class LoginForm(AuthenticationForm):
 
     def __init__(self, *args, **kwargs):
@@ -24,7 +25,7 @@ class CustomUserChangeForm(BaseUserCreationForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'username')
-    
+
     def __init__(self, *args, **kwargs):
         super(BaseUserCreationForm, self).__init__(*args, **kwargs)
         if 'usable_password' in self.fields:
