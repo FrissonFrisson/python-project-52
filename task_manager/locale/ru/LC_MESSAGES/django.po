@@ -156,9 +156,6 @@ msgstr "Задачи"
 msgid "Logout"
 msgstr "Выход"
 
-#: task_manager/templates/base.html:46
-msgid "login"
-msgstr "Вход"
 
 #: task_manager/templates/base.html:49
 #: task_manager/templates/users/signup.html:7
