@@ -283,11 +283,11 @@ msgid "Deleting a user"
 msgstr "Удаление пользователя"
 
 #: task_manager/templates/users/login.html:6
+msgctxt "nav-link"
 msgid "Login"
 msgstr "Вход"
 
 #: task_manager/templates/users/login.html:12
-msgctxt "button"
 msgid "Login"
 msgstr "Войти"
 

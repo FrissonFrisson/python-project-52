@@ -107,7 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
         'OPTIONS': {
-            'min_length': 3,  # Здесь вы можете задать минимальную длину пароля
+            'min_length': 3,
+            'sslmode': 'require',
         }
     },
 ]
