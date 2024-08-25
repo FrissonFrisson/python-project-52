@@ -5,4 +5,4 @@ from task_manager.models import TaskStatus
 class StatuseForm(forms.ModelForm):
     class Meta:
         model = TaskStatus
-        fields = ('name',)
+        fields = ("name",)

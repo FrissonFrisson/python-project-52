@@ -3,10 +3,10 @@
 {% load django_bootstrap5 %}
 {% block content %}
 <h1 class="my-4">{% trans 'Create labels' %}</h1>
-  
+
 <form method="post">
-{% csrf_token %}
-{% bootstrap_form form %}
-<input class="btn btn-primary" type="submit" value="{% trans 'Create' %}">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input class="btn btn-primary" type="submit" value="{% trans 'Create' %}">
 </form>
-    {% endblock %}   
+{% endblock %}

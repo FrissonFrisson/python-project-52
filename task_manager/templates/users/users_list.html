@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-  <div class="container wrapper flex-grow-1">
-    <h1 class="my-4 text-light">      
-        {% trans 'Users' %}
-              </h1>
-<table class="table text-light table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>{% trans 'User name' %}</th>
-      <th>{% trans 'Full name' %}</th>
-      <th>{% trans 'Date of creation' %}</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for user in users %}
+<div class="container wrapper flex-grow-1">
+  <h1 class="my-4 text-light">
+    {% trans 'Users' %}
+  </h1>
+  <table class="table text-light table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>{% trans 'User name' %}</th>
+        <th>{% trans 'Full name' %}</th>
+        <th>{% trans 'Date of creation' %}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
       <tr>
         <td class="text-light">{{user.id}}</td>
         <td class="text-light">{{user.username}}</td>
@@ -28,8 +28,8 @@
           <a href="/users/{{user.id}}/delete/">{% trans 'Delete' %}</a>
         </td>
       </tr>
-    {% endfor %}
-  </tbody>
+      {% endfor %}
+    </tbody>
   </table>
 </div>
-    {% endblock %}   
+{% endblock %}

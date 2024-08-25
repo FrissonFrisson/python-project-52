@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load django_bootstrap5 %}
 {% block content %}
-<h1 class="my-4" >{% trans 'View a task' %}</h1>
+<h1 class="my-4">{% trans 'View a task' %}</h1>
 <div class="card">
     <div class="card-header bg-secondary">
         <h2>{{ task.name }}</h2>
@@ -32,7 +32,7 @@
                     <h6>{% trans 'Labels' %}</h6>
                     <ul>
                         {% for lable in task.labels.all %}
-                            <li>{{ lable }}</li>
+                        <li>{{ lable }}</li>
                         {% endfor %}
                     </ul>
                 </div>

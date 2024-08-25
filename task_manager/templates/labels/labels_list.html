@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-    <h1 class="my-4 text-light">      
-        {% trans 'Labels' %}
-              </h1>
-              <a class="btn btn-primary mb-3" href="/labels/create/">{% trans 'Create label' %}</a>
+<h1 class="my-4 text-light">
+  {% trans 'Labels' %}
+</h1>
+<a class="btn btn-primary mb-3" href="/labels/create/">{% trans 'Create label' %}</a>
 <table class="table text-light table-striped">
   <thead>
     <tr>
@@ -16,17 +16,17 @@
   </thead>
   <tbody>
     {% for label in labels %}
-      <tr>
-        <td class="text-light">{{label.id}}</td>
-        <td class="text-light">{{label.name}}</td>
-        <td class="text-light">{{label.date_joined}}</td>
-        <td>
-          <a href="/labels/{{label.id}}/update/">{% trans 'Change' %}</a>
-          <br>
-          <a href="/labels/{{label.id}}/delete/">{% trans 'Delete' %}</a>
-        </td>
-      </tr>
+    <tr>
+      <td class="text-light">{{label.id}}</td>
+      <td class="text-light">{{label.name}}</td>
+      <td class="text-light">{{label.date_joined}}</td>
+      <td>
+        <a href="/labels/{{label.id}}/update/">{% trans 'Change' %}</a>
+        <br>
+        <a href="/labels/{{label.id}}/delete/">{% trans 'Delete' %}</a>
+      </td>
+    </tr>
     {% endfor %}
   </tbody>
-  </table>
-    {% endblock %}   
+</table>
+{% endblock %}

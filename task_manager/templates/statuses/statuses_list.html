@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-    <h1 class="my-4 text-light">      
-        {% trans 'Statuses' %}
-              </h1>
-              <a class="btn btn-primary mb-3" href="/statuses/create/">{% trans 'Create status' %}</a>
+<h1 class="my-4 text-light">
+  {% trans 'Statuses' %}
+</h1>
+<a class="btn btn-primary mb-3" href="/statuses/create/">{% trans 'Create status' %}</a>
 <table class="table text-light table-striped">
   <thead>
     <tr>
@@ -16,17 +16,17 @@
   </thead>
   <tbody>
     {% for status in statuses %}
-      <tr>
-        <td class="text-light">{{status.id}}</td>
-        <td class="text-light">{{status.name}}</td>
-        <td class="text-light">{{status.date_joined}}</td>
-        <td>
-          <a href="/statuses/{{status.id}}/update/">{% trans 'Change' %}</a>
-          <br>
-          <a href="/statuses/{{status.id}}/delete/">{% trans 'Delete' %}</a>
-        </td>
-      </tr>
+    <tr>
+      <td class="text-light">{{status.id}}</td>
+      <td class="text-light">{{status.name}}</td>
+      <td class="text-light">{{status.date_joined}}</td>
+      <td>
+        <a href="/statuses/{{status.id}}/update/">{% trans 'Change' %}</a>
+        <br>
+        <a href="/statuses/{{status.id}}/delete/">{% trans 'Delete' %}</a>
+      </td>
+    </tr>
     {% endfor %}
   </tbody>
-  </table>
-    {% endblock %}   
+</table>
+{% endblock %}
