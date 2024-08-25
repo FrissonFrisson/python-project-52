@@ -10,7 +10,7 @@
 [![Open Task Manager](https://img.shields.io/badge/Open_Task_Manager-007BFF?style=for-the-badge&logo=appveyor)](https://python-project-52-bbsc.onrender.com)
 
 
-🇹​​​​​🇦​​​​​🇸​​​​​🇰​​​​​ 🇲​​​​​🇦​​​​​🇳​​​​​🇦​​​​​🇬​​​​​🇪​​​​​🇷​​​​​
+### 🇹​​​​​🇦​​​​​🇸​​​​​🇰​​​​​ 🇲​​​​​🇦​​​​​🇳​​​​​🇦​​​​​🇬​​​​​🇪​​​​​🇷​​​​​
 
 ### Project Description: Task Manager
 
@@ -39,4 +39,16 @@ The project demonstrates the application of acquired knowledge in developing a f
 
 ```bash
   make run
+```
+
+## Test
+
+```bash
+  make test
+```
+
+## Lint
+
+```bash
+  make lint
 ```
