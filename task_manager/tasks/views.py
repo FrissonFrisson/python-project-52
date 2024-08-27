@@ -8,7 +8,9 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-from task_manager.models import Task, TaskStatus, Label
+from task_manager.tasks.models import Task
+from task_manager.statuses.models import TaskStatus
+from task_manager.labels.models import Label
 from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.filters import TaskFilter
 from task_manager.mixins import CustomLoginRequiredMixin

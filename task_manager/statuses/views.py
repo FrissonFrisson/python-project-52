@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.views.generic import ListView
 from django.db.models.deletion import ProtectedError
 
-from task_manager.models import TaskStatus
+from task_manager.statuses.models import TaskStatus
 from task_manager.statuses.forms import StatuseForm
 from task_manager.mixins import CustomLoginRequiredMixin
 

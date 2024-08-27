@@ -6,7 +6,7 @@ from django.db.models.deletion import ProtectedError
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-from task_manager.models import Label
+from task_manager.labels.models import Label
 from task_manager.labels.forms import LabelForm
 from task_manager.mixins import CustomLoginRequiredMixin
 

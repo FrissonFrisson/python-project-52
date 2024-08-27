@@ -1,6 +1,6 @@
 [
     {
-        "model": "task_manager.taskstatus",
+        "model": "statuses.TaskStatus",
         "pk": 1,
         "fields": {
             "name": "teststatus",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "model": "task_manager.taskstatus",
+        "model": "statuses.TaskStatus",
         "pk": 2,
         "fields": {
             "name": "teststatus2",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "model": "task_manager.Label",
+        "model": "labels.Label",
         "pk": 1,
         "fields": {
             "name": "testlabel",
@@ -64,7 +64,7 @@
         }
     },
     {
-        "model": "task_manager.Label",
+        "model": "labels.Label",
         "pk": 2,
         "fields": {
             "name": "testlabel2",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model": "task_manager.Task",
+        "model": "tasks.Task",
         "pk": 1,
         "fields": {
             "name": "testtask2",
@@ -87,7 +87,7 @@
         }
     },
     {
-        "model": "task_manager.Task",
+        "model": "tasks.Task",
         "pk": 2,
         "fields": {
             "name": "testtask",
