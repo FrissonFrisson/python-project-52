@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.messages import get_messages
-from django.contrib.auth.models import User
 
 from task_manager.tasks.models import Task
 
@@ -59,7 +58,8 @@ class TaskCRUDTest(Login, TestCase):
             "status": 2,
         }
         self.login_testuser1()
-        response = self.client.post(reverse("update_task", args=[1]), updated_data)
+        response = self.client.post(
+            reverse("update_task", args=[1]), updated_data)
         self.assertRedirects(response, expected_url=reverse("tasks_list"))
         task = Task.objects.get(pk=1)
         task.refresh_from_db()

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from task_manager.tasks.models import Task
 
+
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
     list_display = ('name', 'author', 'executor', 'status', 'date_joined')

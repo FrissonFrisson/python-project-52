@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.messages import get_messages
-from django.contrib.auth.models import User
 
 from task_manager.statuses.models import TaskStatus
 
@@ -52,7 +51,8 @@ class StatusCRUDTest(Login, TestCase):
             "name": "newname",
         }
         self.login_testuser1()
-        response = self.client.post(reverse("update_status", args=[1]), updated_data)
+        response = self.client.post(
+            reverse("update_status", args=[1]), updated_data)
         self.assertRedirects(response, expected_url=reverse("statuses_list"))
         status = TaskStatus.objects.get(pk=1)
         status.refresh_from_db()
