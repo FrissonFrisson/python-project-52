@@ -18,13 +18,13 @@ from task_manager.mixins import CustomLoginRequiredMixin
 
 class TaskDetail(CustomLoginRequiredMixin, DetailView):
     model = Task
-    template_name = "tasks/task_detail.html"
+    template_name = "tasks/task.html"
     context_object_name = "task"
 
 
 class TasksListView(CustomLoginRequiredMixin, ListView):
     model = Task
-    template_name = "tasks/tasks_list.html"
+    template_name = "tasks/list.html"
     ordering = ["date_joined"]
 
     def get_queryset(self):
@@ -44,7 +44,7 @@ class TasksListView(CustomLoginRequiredMixin, ListView):
 
 
 class TaskCreateView(CustomLoginRequiredMixin, CreateView):
-    template_name = "tasks/create_task.html"
+    template_name = "tasks/create.html"
     form_class = TaskForm
     success_url = reverse_lazy("tasks_list")
 
@@ -57,7 +57,7 @@ class TaskCreateView(CustomLoginRequiredMixin, CreateView):
 class TaskUpdateView(CustomLoginRequiredMixin, UpdateView):
     model = Task
     form_class = TaskForm
-    template_name = "tasks/update_task.html"
+    template_name = "tasks/update.html"
     success_url = reverse_lazy("tasks_list")
 
     def post(
@@ -69,7 +69,7 @@ class TaskUpdateView(CustomLoginRequiredMixin, UpdateView):
 
 class TaskDeleteView(CustomLoginRequiredMixin, DeleteView):
     model = Task
-    template_name = "tasks/delete_task.html"
+    template_name = "tasks/delete.html"
     success_url = reverse_lazy("tasks_list")
 
     def dispatch(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:

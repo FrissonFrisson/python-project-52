@@ -13,13 +13,13 @@ from task_manager.mixins import CustomLoginRequiredMixin
 
 class LabelsListView(CustomLoginRequiredMixin, ListView):
     model = Label
-    template_name = "labels/labels_list.html"
+    template_name = "labels/list.html"
     context_object_name = "labels"
     ordering = ["date_joined"]
 
 
 class LabelCreateView(CustomLoginRequiredMixin, CreateView):
-    template_name = "labels/create_labels.html"
+    template_name = "labels/create.html"
     form_class = LabelForm
     success_url = reverse_lazy("labels_list")
 
@@ -31,7 +31,7 @@ class LabelCreateView(CustomLoginRequiredMixin, CreateView):
 class LabelUpdateView(CustomLoginRequiredMixin, UpdateView):
     model = Label
     form_class = LabelForm
-    template_name = "labels/update_label.html"
+    template_name = "labels/update.html"
     success_url = reverse_lazy("labels_list")
 
     def get_success_url(self):
@@ -41,7 +41,7 @@ class LabelUpdateView(CustomLoginRequiredMixin, UpdateView):
 
 class LabelDeleteView(CustomLoginRequiredMixin, DeleteView):
     model = Label
-    template_name = "labels/delete_label.html"
+    template_name = "labels/delete.html"
     success_url = reverse_lazy("labels_list")
 
     def post(self, request, *args, **kwargs):

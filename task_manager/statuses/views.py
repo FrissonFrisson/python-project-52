@@ -13,13 +13,13 @@ from task_manager.mixins import CustomLoginRequiredMixin
 
 class StatusesListView(CustomLoginRequiredMixin, ListView):
     model = TaskStatus
-    template_name = "statuses/statuses_list.html"
+    template_name = "statuses/list.html"
     context_object_name = "statuses"
     ordering = ["date_joined"]
 
 
 class StatusCreateView(CustomLoginRequiredMixin, CreateView):
-    template_name = "statuses/create_status.html"
+    template_name = "statuses/create.html"
     form_class = StatuseForm
     success_url = reverse_lazy("statuses_list")
 
@@ -31,7 +31,7 @@ class StatusCreateView(CustomLoginRequiredMixin, CreateView):
 class StatusUpdateView(CustomLoginRequiredMixin, UpdateView):
     model = TaskStatus
     form_class = StatuseForm
-    template_name = "statuses/update_status.html"
+    template_name = "statuses/update.html"
     success_url = reverse_lazy("statuses_list")
 
     def get_success_url(self):
@@ -41,7 +41,7 @@ class StatusUpdateView(CustomLoginRequiredMixin, UpdateView):
 
 class StatusDeleteView(CustomLoginRequiredMixin, DeleteView):
     model = TaskStatus
-    template_name = "statuses/delete_status.html"
+    template_name = "statuses/delete.html"
     success_url = reverse_lazy("statuses_list")
 
     def post(self, request, *args, **kwargs):

@@ -17,7 +17,7 @@ from django.db.models.deletion import ProtectedError
 
 class UserListView(ListView):
     model = User
-    template_name = 'users/users_list.html'
+    template_name = 'users/list.html'
     context_object_name = 'users'
     ordering = ['date_joined']
 
@@ -67,7 +67,7 @@ class UserUpdateView(UserUpdatePermissionMixin, UpdateView):
 
 class UserDeleteView(UserUpdatePermissionMixin, DeleteView):
     model = User
-    template_name = 'users/delete_user.html'
+    template_name = 'users/delete.html'
     success_url = reverse_lazy("users")
 
     def post(self, request, *args, **kwargs):
