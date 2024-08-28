@@ -9,7 +9,7 @@ from task_manager.users.forms import (
     CustomUserChangeForm
 )
 from django.shortcuts import redirect
-from task_manager.mixins import UserPermissionDeniedMixin, CustomLoginRequiredMixin
+from task_manager.mixins import CustomLoginRequiredMixin, UserPermissionDeniedMixin
 from django.contrib import messages
 from django.views.generic import ListView
 from django.db.models.deletion import ProtectedError
@@ -69,6 +69,7 @@ class UserDeleteView(CustomLoginRequiredMixin, UserPermissionDeniedMixin, Delete
     model = User
     template_name = 'users/delete.html'
     success_url = reverse_lazy("users")
+
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
