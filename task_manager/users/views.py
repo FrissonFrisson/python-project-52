@@ -70,7 +70,6 @@ class UserDeleteView(CustomLoginRequiredMixin, UserPermissionDeniedMixin, Delete
     template_name = 'users/delete.html'
     success_url = reverse_lazy("users")
 
-
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         try:

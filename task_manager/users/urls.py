@@ -6,7 +6,6 @@ from task_manager.users.views import (
     UserUpdateView,
     UserDeleteView,
     CustomLogoutUser,
-    CustomLoginUser
 )
 
 urlpatterns = [
