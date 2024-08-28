@@ -3,7 +3,6 @@
 {% block content %}
 {% load django_bootstrap5 %}
 <h1 class="my-4">{% trans 'Create status' %}</h1>
-
 <form method="post">
     {% csrf_token %}
     {% bootstrap_form form %}

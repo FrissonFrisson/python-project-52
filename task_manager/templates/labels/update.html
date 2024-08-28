@@ -10,12 +10,18 @@
     {% for field in form %}
     <label class="form-label" for="id_{{ field.name }}">{{ field.label }}</label>
     <div class="mb-3">
-        <input type="text" class="form-control" name="{{ field.name }}" id="id_{{ field.name }}"
-            value="{{ field.value|default:'' }}" placeholder="{{ field.label }}">
+        <input
+            type="text"
+            class="form-control"
+            name="{{ field.name }}"
+            id="id_{{ field.name }}"
+            value="{{ field.value|default:'' }}"
+            placeholder="{{ field.label }}"
+        >
         <div class="text-danger">
             <small>{{field.errors}}</small>
         </div>
-        <div class="form-text">{{ field.help_text }} </div>
+        <div class="form-text">{{ field.help_text }}</div>
     </div>
     {% endfor %}
     <input class="btn btn-primary" type="submit" value="{% trans 'Edit' %}">

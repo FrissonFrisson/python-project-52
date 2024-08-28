@@ -1,48 +1,50 @@
-{% extends "base.html" %} {% load i18n %} {% load django_bootstrap5 %} {% block
-content %}
+{% extends "base.html" %}
+{% load i18n %}
+{% load django_bootstrap5 %}
+{% block content %}
 <h1 class="my-4">{% trans 'View a task' %}</h1>
 <div class="card">
-  <div class="card-header bg-secondary">
-    <h2>{{ task.name }}</h2>
-  </div>
-  <div class="card-body bg-dark">
-    <p>{{ task.description }}</p>
-    <hr />
-    <div class="container">
-      <div class="row p-1">
-        <div class="col">{% trans 'Author' %}</div>
-        <div class="col">{{ task.author.get_full_name }}</div>
-      </div>
-      <div class="row p-1">
-        <div class="col">{% trans "Executor" %}</div>
-        <div class="col">{{ task.executor.get_full_name }}</div>
-      </div>
-      <div class="row p-1">
-        <div class="col">{% trans 'Status' %}</div>
-        <div class="col">{{ task.status }}</div>
-      </div>
-      <div class="row p-1">
-        <div class="col">{% trans 'Date of creation' %}</div>
-        <div class="col">{{ task.date_joined }}</div>
-      </div>
-      <div class="row p-1">
-        <div class="col">
-          <h6>{% trans 'Labels' %}</h6>
-          <ul>
-            {% for lable in task.labels.all %}
-            <li>{{ lable }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      <div class="row p-1 border-top">
-        <div class="col">
-          <a href="{% url 'update_task' task.id %}">{% trans 'Change' %}</a>
-          <br />
-          <a href="{% url 'delete_task' task.id %}">{% trans 'Delete' %}</a>
-        </div>
-      </div>
+    <div class="card-header bg-secondary">
+        <h2>{{ task.name }}</h2>
     </div>
-  </div>
-  {% endblock %}
+    <div class="card-body bg-dark">
+        <p>{{ task.description }}</p>
+        <hr>
+        <div class="container">
+            <div class="row p-1">
+                <div class="col">{% trans 'Author' %}</div>
+                <div class="col">{{ task.author.get_full_name }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">{% trans "Executor" %}</div>
+                <div class="col">{{ task.executor.get_full_name }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">{% trans 'Status' %}</div>
+                <div class="col">{{ task.status }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">{% trans 'Date of creation' %}</div>
+                <div class="col">{{ task.date_joined }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">
+                    <h6>{% trans 'Labels' %}</h6>
+                    <ul>
+                        {% for lable in task.labels.all %}
+                        <li>{{ lable }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row p-1 border-top">
+                <div class="col">
+                    <a href="{% url 'update_task' task.id %}">{% trans 'Change' %}</a>
+                    <br>
+                    <a href="{% url 'delete_task' task.id %}">{% trans 'Delete' %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
 </div>

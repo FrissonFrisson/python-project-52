@@ -1,50 +1,49 @@
-{% extends "base.html" %} {% load i18n %} {% block content %} {% load
-django_bootstrap5 %}
+{% extends "base.html" %}
+{% load i18n %}
+{% load django_bootstrap5 %}
+{% block content %}
 <h1 class="my-4 text-light">{% trans 'Tasks' %}</h1>
-<a class="btn btn-primary mb-3" href="/tasks/create/"
-  >{% trans 'Create task' %}</a
+<a class="btn btn-primary mb-3" href="/tasks/create/">{% trans 'Create task' %}
+</a
 >
-
 <div class="card mb-3 bg-light text-dark">
-  <form class="card-body">
-    <form class="form-inline center" method="get">
-      {% bootstrap_form filter.form %}
-      <input
-        class="btn btn-outline-dark"
-        type="submit"
-        value="{% trans 'Show' %}"
-      />
+    <form class="card-body">
+        <form class="form-inline center" method="get">
+            {% bootstrap_form filter.form %}
+            <input class="btn btn-outline-dark" type="submit" value="{% trans 'Show' %}">
+        </form>
     </form>
-  </form>
 </div>
 <table class="table text-light table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>{% trans 'Name' %}</th>
-      <th>{% trans 'Status' %}</th>
-      <th>{% trans 'Author' %}</th>
-      <th>{% trans 'Executor' %}</th>
-      <th>{% trans 'Date of creation' %}</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for task in filter.qs %}
-    <tr>
-      <td class="text-light">{{task.id}}</td>
-      <td class="text-light"><a href="/tasks/{{task.id}}">{{task.name}}</a></td>
-      <td class="text-light">{{task.status}}</td>
-      <td class="text-light">{{task.author.get_full_name}}</td>
-      <td class="text-light">{{task.executor.get_full_name}}</td>
-      <td class="text-light">{{task.date_joined}}</td>
-      <td>
-        <a href="{% url 'update_task' task.id %}">{% trans 'Change' %}</a>
-        <br />
-        <a href="{% url 'delete_task' task.id %}">{% trans 'Delete' %}</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>{% trans 'Name' %}</th>
+            <th>{% trans 'Status' %}</th>
+            <th>{% trans 'Author' %}</th>
+            <th>{% trans 'Executor' %}</th>
+            <th>{% trans 'Date of creation' %}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in filter.qs %}
+        <tr>
+            <td class="text-light">{{task.id}}</td>
+            <td class="text-light">
+                <a href="/tasks/{{task.id}}">{{task.name}}</a>
+            </td>
+            <td class="text-light">{{task.status}}</td>
+            <td class="text-light">{{task.author.get_full_name}}</td>
+            <td class="text-light">{{task.executor.get_full_name}}</td>
+            <td class="text-light">{{task.date_joined}}</td>
+            <td>
+                <a href="{% url 'update_task' task.id %}">{% trans 'Change' %}</a>
+                <br>
+                <a href="{% url 'delete_task' task.id %}">{% trans 'Delete' %}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 {% endblock %}
