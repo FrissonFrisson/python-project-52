@@ -1,17 +1,19 @@
-{% extends "base.html" %}
-{% load i18n %}
-{% block content %}
-{% load django_bootstrap5 %}
-<h1 class="my-4 text-light">
-  {% trans 'Tasks' %}
-</h1>
-<a class="btn btn-primary mb-3" href="/tasks/create/">{% trans 'Create task' %}</a>
+{% extends "base.html" %} {% load i18n %} {% block content %} {% load
+django_bootstrap5 %}
+<h1 class="my-4 text-light">{% trans 'Tasks' %}</h1>
+<a class="btn btn-primary mb-3" href="/tasks/create/"
+  >{% trans 'Create task' %}</a
+>
 
 <div class="card mb-3 bg-light text-dark">
   <form class="card-body">
     <form class="form-inline center" method="get">
       {% bootstrap_form filter.form %}
-      <input class="btn btn-outline-dark" type="submit" value="{% trans 'Show' %}">
+      <input
+        class="btn btn-outline-dark"
+        type="submit"
+        value="{% trans 'Show' %}"
+      />
     </form>
   </form>
 </div>
@@ -37,9 +39,9 @@
       <td class="text-light">{{task.executor.get_full_name}}</td>
       <td class="text-light">{{task.date_joined}}</td>
       <td>
-        <a href="/tasks/{{task.id}}/update/">{% trans 'Change' %}</a>
-        <br>
-        <a href="/tasks/{{task.id}}/delete/">{% trans 'Delete' %}</a>
+        <a href="{% url 'update_task' task.id %}">{% trans 'Change' %}</a>
+        <br />
+        <a href="{% url 'delete_task' task.id %}">{% trans 'Delete' %}</a>
       </td>
     </tr>
     {% endfor %}

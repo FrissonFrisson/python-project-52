@@ -21,9 +21,9 @@
       <td class="text-light">{{label.name}}</td>
       <td class="text-light">{{label.date_joined}}</td>
       <td>
-        <a href="/labels/{{label.id}}/update/">{% trans 'Change' %}</a>
+        <a href="{% url 'update_label' label.id %}">{% trans 'Change' %}</a>
         <br>
-        <a href="/labels/{{label.id}}/delete/">{% trans 'Delete' %}</a>
+        <a href="{% url 'delete_label' label.id %}">{% trans 'Delete' %}</a>
       </td>
     </tr>
     {% endfor %}
