@@ -13,7 +13,7 @@ class UserPermissionDeniedMixin(UserPassesTestMixin):
 
     def dispatch(self, request, *args, **kwargs):
         self.permission_denied_message = _(
-                "You do not have the rights to change another user.")
+            "You do not have the rights to change another user.")
         self.permission_denied_url = reverse_lazy('users')
         return super().dispatch(request, *args, **kwargs)
 
@@ -21,7 +21,8 @@ class UserPermissionDeniedMixin(UserPassesTestMixin):
 class CustomLoginRequiredMixin(LoginRequiredMixin):
 
     def dispatch(self, request, *args, **kwargs):
-        self.permission_denied_message = _('You are not logged in! Please sign in.')
+        self.permission_denied_message = _(
+            'You are not logged in! Please sign in.')
         self.permission_denied_url = reverse_lazy('login')
         return super().dispatch(request, *args, **kwargs)
 
