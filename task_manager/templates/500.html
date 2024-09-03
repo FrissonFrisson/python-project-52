@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<h1 class="my-4 text-light"></h1>
+
+<div class="card border-white rounded-5">
+  <div class="card-body p-4 bg-secondary text-light rounded-5">
+    <div class="display-1">{% trans 'Oops, 500 error' %}</div>
+    <p class="lead">{% trans 'The server seems to be unresponsive. Please try again later.' %}</p>
+    <hr>
+    <a class="btn btn-primary btn-lg bg-dark" href="{% url 'index' %}">{% trans 'Return to Home' %}</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -19,7 +19,9 @@ load_dotenv()
 POST_SERVER_ITEM_ACCESS_TOKEN = os.getenv("POST_SERVER_ITEM_ACCESS_TOKEN")
 DATABASE_URL = os.getenv("DATABASE_URL")
 SECRET_KEY = os.getenv("SECRET_KEY")
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "t")
+print(f"DEBUG variable: {os.getenv('DEBUG')}")
+   
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 ALLOWED_HOSTS = [
@@ -146,7 +148,7 @@ USE_I18N = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "task_manager/static"),
+    BASE_DIR / "task_manager/static",
 ]
 
 
