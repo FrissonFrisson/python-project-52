@@ -76,7 +76,7 @@ class UserDeleteView(
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
-        if self.object.tasks_created.exists() or self.object.tasks_author.exists():
+        if self.object.tasks_created.exists() or self.object.tasks_executor.exists():
             messages.error(self.request, _(
                 "Cannot delete user because it is in use"))
             return redirect(self.success_url)
