@@ -64,5 +64,5 @@ class StatusDeleteView(
         if self.object.task_set.exists():
             messages.error(self.request, _(
                 "Cannot delete status because it is in use"))
-            return redirect(self.success_url())
+            return redirect(self.success_url)
         return super().post(request, *args, **kwargs)
