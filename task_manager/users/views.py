@@ -10,10 +10,13 @@ from task_manager.users.forms import (
     CustomUserChangeForm
 )
 from django.shortcuts import redirect
-from task_manager.mixins import NoPermissionHandleMixin, CustomLoginRequiredMixin, UserPermissionDeniedMixin
+
+from task_manager.mixins import (
+    NoPermissionHandleMixin,
+    CustomLoginRequiredMixin,
+    UserPermissionDeniedMixin)
 from django.contrib import messages
 from django.views.generic import ListView
-from django.db.models.deletion import ProtectedError
 
 
 class UserListView(ListView):
@@ -45,7 +48,13 @@ class CustomLogoutUser(LogoutView):
         return super().dispatch(request)
 
 
-class UserUpdateView(SuccessMessageMixin, CustomLoginRequiredMixin, NoPermissionHandleMixin, UserPermissionDeniedMixin, UpdateView):
+class UserUpdateView(
+    SuccessMessageMixin,
+    CustomLoginRequiredMixin,
+    NoPermissionHandleMixin,
+    UserPermissionDeniedMixin,
+    UpdateView
+):
     model = User
     form_class = CustomUserChangeForm
     template_name = 'users/update.html'
@@ -53,7 +62,13 @@ class UserUpdateView(SuccessMessageMixin, CustomLoginRequiredMixin, NoPermission
     success_message = _('User successfully changed')
 
 
-class UserDeleteView(SuccessMessageMixin, NoPermissionHandleMixin, CustomLoginRequiredMixin, UserPermissionDeniedMixin, DeleteView):
+class UserDeleteView(
+    SuccessMessageMixin,
+    NoPermissionHandleMixin,
+    CustomLoginRequiredMixin,
+    UserPermissionDeniedMixin,
+    DeleteView
+):
     model = User
     template_name = 'users/delete.html'
     success_url = reverse_lazy("users")

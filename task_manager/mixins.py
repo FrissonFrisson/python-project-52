@@ -1,6 +1,4 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.http.request import HttpRequest as HttpRequest
-from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
