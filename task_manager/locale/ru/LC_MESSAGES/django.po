@@ -40,7 +40,7 @@ msgid "You do not have the rights to change another user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
 #: task_manager/mixins.py:18 task_manager/mixins.py:24
-msgid "You are not logged in! Please log in."
+msgid "You are not logged in! Please sign in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
 #: task_manager/models.py:7 task_manager/models.py:15 task_manager/models.py:29

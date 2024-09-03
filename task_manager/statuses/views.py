@@ -8,17 +8,17 @@ from django.db.models.deletion import ProtectedError
 
 from task_manager.statuses.models import TaskStatus
 from task_manager.statuses.forms import StatuseForm
-from task_manager.mixins import CustomLoginRequiredMixin
+from task_manager.mixins import NoPermissionHandleMixin,CustomLoginRequiredMixin
 
 
-class StatusesListView(CustomLoginRequiredMixin, ListView):
+class StatusesListView(NoPermissionHandleMixin,CustomLoginRequiredMixin, ListView):
     model = TaskStatus
     template_name = "statuses/list.html"
     context_object_name = "statuses"
     ordering = ["date_joined"]
 
 
-class StatusCreateView(CustomLoginRequiredMixin, CreateView):
+class StatusCreateView(NoPermissionHandleMixin,CustomLoginRequiredMixin, CreateView):
     template_name = "statuses/create.html"
     form_class = StatuseForm
     success_url = reverse_lazy("statuses_list")
@@ -28,7 +28,7 @@ class StatusCreateView(CustomLoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class StatusUpdateView(CustomLoginRequiredMixin, UpdateView):
+class StatusUpdateView(NoPermissionHandleMixin,CustomLoginRequiredMixin, UpdateView):
     model = TaskStatus
     form_class = StatuseForm
     template_name = "statuses/update.html"
@@ -39,7 +39,7 @@ class StatusUpdateView(CustomLoginRequiredMixin, UpdateView):
         return super().get_success_url()
 
 
-class StatusDeleteView(CustomLoginRequiredMixin, DeleteView):
+class StatusDeleteView(NoPermissionHandleMixin,CustomLoginRequiredMixin, DeleteView):
     model = TaskStatus
     template_name = "statuses/delete.html"
     success_url = reverse_lazy("statuses_list")

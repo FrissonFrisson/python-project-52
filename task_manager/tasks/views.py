@@ -13,16 +13,16 @@ from task_manager.statuses.models import TaskStatus
 from task_manager.labels.models import Label
 from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.filters import TaskFilter
-from task_manager.mixins import CustomLoginRequiredMixin
+from task_manager.mixins import NoPermissionHandleMixin,CustomLoginRequiredMixin
 
 
-class TaskDetail(CustomLoginRequiredMixin, DetailView):
+class TaskDetail(NoPermissionHandleMixin,CustomLoginRequiredMixin, DetailView):
     model = Task
     template_name = "tasks/task.html"
     context_object_name = "task"
 
 
-class TasksListView(CustomLoginRequiredMixin, ListView):
+class TasksListView(NoPermissionHandleMixin,CustomLoginRequiredMixin, ListView):
     model = Task
     template_name = "tasks/list.html"
     ordering = ["date_joined"]
@@ -43,7 +43,7 @@ class TasksListView(CustomLoginRequiredMixin, ListView):
         return context
 
 
-class TaskCreateView(CustomLoginRequiredMixin, CreateView):
+class TaskCreateView(NoPermissionHandleMixin,CustomLoginRequiredMixin, CreateView):
     template_name = "tasks/create.html"
     form_class = TaskForm
     success_url = reverse_lazy("tasks_list")
@@ -54,7 +54,7 @@ class TaskCreateView(CustomLoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class TaskUpdateView(CustomLoginRequiredMixin, UpdateView):
+class TaskUpdateView(NoPermissionHandleMixin,CustomLoginRequiredMixin, UpdateView):
     model = Task
     form_class = TaskForm
     template_name = "tasks/update.html"
@@ -67,7 +67,7 @@ class TaskUpdateView(CustomLoginRequiredMixin, UpdateView):
         return super().post(request, *args, **kwargs)
 
 
-class TaskDeleteView(CustomLoginRequiredMixin, DeleteView):
+class TaskDeleteView(NoPermissionHandleMixin,CustomLoginRequiredMixin, DeleteView):
     model = Task
     template_name = "tasks/delete.html"
     success_url = reverse_lazy("tasks_list")

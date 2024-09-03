@@ -12,9 +12,3 @@ class Label(models.Model):
 
     def __str__(self):
         return self.name
-
-    def delete(self, *args, **kwargs):
-        if self.task_set.exists():
-            raise ProtectedError(
-                _("Cannot delete label because it is in use"), self)
-        super().delete(*args, **kwargs)

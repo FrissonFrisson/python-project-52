@@ -30,9 +30,9 @@ ALLOWED_HOSTS = [
 ]
 
 
-LOGIN_URL = '/login/'  # или путь, который вы указали в urls.py
+LOGIN_URL = '/login/'
 
-LOGIN_REDIRECT_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
