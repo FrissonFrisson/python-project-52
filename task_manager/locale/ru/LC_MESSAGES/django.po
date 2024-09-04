@@ -132,15 +132,15 @@ msgstr "Такой страницы не существует, вернитес�
 
 #: task_manager/templates/404.html:11 task_manager/templates/500.html:11
 msgid "Return to Home"
-msgstr ""
+msgstr "Вернуться на главную"
 
 #: task_manager/templates/500.html:8
 msgid "Oops, 500 error"
-msgstr ""
+msgstr "Упс, ошибка 500"
 
 #: task_manager/templates/500.html:9
 msgid "The server seems to be unresponsive. Please try again later."
-msgstr ""
+msgstr "Кажется, что сервер не отвечает нам, попробуйте позже"
 
 #: task_manager/templates/base.html:14
 msgid "Task Manager by Frisson"
